@@ -1,17 +1,15 @@
-import Image from "next/image";
-import Head from 'next/head';
+"use client"
+import Navbar from '../components/NavigationBar/navigation';
+import LoginPage from '@/components/Login/Register/login';
+import RegisterPage from '@/components/Login/Register/register';
 
-export default function Home() {
+function MyApp() {
   return (
-    <main>
-      <div className="min-h-screen flex items-center justify-center">
-        <Head>
-          <title>Making Delivery Management Service</title>
-        </Head>
-        <div className="text-5xl font-bold text-center">
-          Making Delivery Management Service
-        </div>
-      </div>
-    </main>
+    <div className="min-h-screen">
+      <Navbar />
+      
+    </div>
   );
 }
+
+export default MyApp;
