@@ -1,7 +1,10 @@
 import Link from 'next/link';
 
+
 const Navbar = () => {
+    
   return (
+    <>
     <nav className="bg-gray-500 flex items-center justify-between px-4 py-2 fixed top-0 w-full z-50">
       <Link legacyBehavior href="/">
         <a className="text-white text-xl font-bold">Delivery Management Service</a>
@@ -13,7 +16,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link legacyBehavior href="/post-order">
+          <Link legacyBehavior href="/postOrder">
             <a className="text-white hover:text-gray-400">Post Order</a>
           </Link>
         </li>
@@ -38,6 +41,8 @@ const Navbar = () => {
         </svg>
       </div>
     </nav>
+   
+    </>
   );
 };
 
