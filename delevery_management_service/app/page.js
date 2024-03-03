@@ -11,23 +11,23 @@ import profileData from '@/DATA/profileData';
 function MyApp() {
   return (
       
-    <>
-    <div className="container mx-auto px-4 py-8">
-      <Profile {...profileData} />
+    // <>
+    // <div className="container mx-auto px-4 py-8">
+    //   <Profile {...profileData} />
+    // </div>
+    // </>
+    <div className="min-h-screen">
+      <main>
+      <div className="min-h-screen flex items-center justify-center">
+      <Head>
+        <title>Delivery Management Service</title>
+      </Head>
+      <div className="text-5xl font-bold text-center">
+        Making Delivery Management Service
+      </div>
     </div>
-    </>
-    // <div className="min-h-screen">
-    //   <main>
-    //   <div className="min-h-screen flex items-center justify-center">
-    //   <Head>
-    //     <title>Delivery Management Service</title>
-    //   </Head>
-    //   <div className="text-5xl font-bold text-center">
-    //     Making Delivery Management Service
-    //   </div>
-    // </div>
-    //   </main>
-    // </div>
+      </main>
+    </div>
   );
 }
 
