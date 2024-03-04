@@ -1,21 +1,22 @@
 "use client"
 import Head from 'next/head';
-import HomePage from '@/components/Home/home';
+import HomePage from './Home/page';
 import Navbar from '../components/NavigationBar/navigation';
-import LoginPage from '@/components/Login/Register/login';
-import RegisterPage from '@/components/Login/Register/register';
-import PostOrderPage from '@/components/PostOrder/postOrder';
+import LoginPage from '@/app/Login/page';
+import RegisterPage from '@/app/Register/page';
+import PostOrderPage from './PostOrder/page';
 import Profile from '@/components/Profile/profile';
 import profileData from '@/DATA/profileData';
 
 function MyApp() {
   return (
       
-    // <>
-    // <div className="container mx-auto px-4 py-8">
-    //   <Profile {...profileData} />
-    // </div>
-    // </>
+    <>
+    
+     {/* <div className="container mx-auto px-4 py-8">
+       <Profile {...profileData} />
+     </div> */}
+    
     <div className="min-h-screen">
       <main>
       <div className="min-h-screen flex items-center justify-center">
@@ -28,6 +29,8 @@ function MyApp() {
     </div>
       </main>
     </div>
+    
+    </>
   );
 }
 

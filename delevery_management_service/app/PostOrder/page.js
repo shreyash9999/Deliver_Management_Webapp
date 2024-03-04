@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../PostOrder/Card';
+import Card from '../../components/Cards/Card';
 import orderItems from '../../DATA/dummyData'; // Assuming data.js is in the same directory
 
 function PostOrderPage() {
