@@ -7,11 +7,14 @@ RUN apk add --no-cache libc6-compat
 # Create a working directory for the application
 WORKDIR /app
 
-# Copy package.json to determine dependencies
+# Copy package.json and package-lock.json (or yarn.lock) to determine dependencies
 COPY package*.json ./
 
-# Install dependencies using npm
-RUN npm install
+# Install dependencies based on the package manager used (automatic detection)
+RUN if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
+elif [ -f package-lock.json ]; then npm ci; \
+else echo "Lockfile not found." && exit 1; \
+fi
 
 # Create separate stages for building and running the application
 # (multi-stage build for smaller image size)
