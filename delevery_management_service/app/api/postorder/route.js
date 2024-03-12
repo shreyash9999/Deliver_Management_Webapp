@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import jwt from "jsonwebtoken"; 
+
 import ConnectDB from "@/lib/db";
 import Order from "@/lib/models/orders";
 export async function POST(req) {
