@@ -12,7 +12,7 @@ const OrderSchema = new mongoose.Schema({
   },
   placedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
+    ref: 'User',
     required: true
   },
   isAccepted: {
@@ -21,7 +21,7 @@ const OrderSchema = new mongoose.Schema({
   },
   acceptedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
+    ref: 'User',
     // Conditional validation using virtual property
     validate: {
       validator: function(v) {
@@ -31,5 +31,14 @@ const OrderSchema = new mongoose.Schema({
     }
   }
 });
+
+OrderSchema.query.findByPlacedBy = async function(userId) {
+  return await this.find({ placedBy: userId });
+};
+
+OrderSchema.query.findByAcceptedBy = async function(userId) {
+  return await this.find({ acceptedBy: userId, isAccepted: true });
+};
+
 const Order=mongoose.models.Order || mongoose.model('Order', OrderSchema);
 module.exports =Order;
