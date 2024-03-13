@@ -8,7 +8,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Copy package.json and package-lock.json (or yarn.lock) to determine dependencies
-COPY package*.json ./
+COPY ./package*.json /app
 
 # Install dependencies based on the package manager used (automatic detection)
 RUN if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
